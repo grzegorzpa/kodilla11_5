@@ -1,28 +1,22 @@
-$(function(){
-    console.log('DOM loaded');
-    var carouselList = $("#carousel ul");
-    var firstItem = carouselList.find("li:first");
-    var lastItem = carouselList.find("li:last");
-    carouselList.animate({'marginLeft':-400}, 500, (moveFirstSlide));
-    setInterval(changeSlide, 3000);
-    lastItem.after(firstItem);
-    carouselList.css({marginLeft:0});
-});
+function Button(text) {
+    this.text = text || 'Hello';
+};
 
+Button.prototype = {
+    create: function() {
+        var self = this;
+        this.$element = $('<button>');
+        this.$element.text(this.text);
+        this.$element.click(function() {
+            alert(self.text);
+        })
+        this.$element.appendTo($('body'));
 
+    }
+};
 
+var btn1 = new Button('Hello!');
+var btn2 = new Button('Allegro');
 
-
-
-
-/*
-
-$(changeSlide(function) {
-    carouselList.animate({'marginLeft':-400}, 500, moveFirstSlide);
-    $(moveFirstSlide(function){
-        var firstItem = carouselList.find("li:first");
-        var lastItem = carouselList.find("li:last");
-        carouselList.css({marginLeft:0});
-    })
-});
-*/
+btn1.create();
+btn2.create();
