@@ -1,0 +1,29 @@
+* {
+    box-sizing:border-box;
+ }
+        
+body {
+	width: 2000px;
+	margin: 0 auto;
+}
+.gallery {
+	width: 2000px;
+	margin-top: 0 auto,
+}
+ul {
+	max-width: 2000px;
+	padding: 0px;
+}
+li {
+	list-style: none;
+	width: 400px;
+	height: 300px;
+	float: left;
+	overflow: hidden;
+	display: inline-block;
+}
+img {
+	width: 400px;
+	height: 300px;
+
+}
